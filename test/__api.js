@@ -12,9 +12,9 @@ describe('API', function() {
 
 	it('/ should return specified object', function testHealth(done) {
 		request(server)
-			.get('/api')
+			.get('/api/v1/')
 			.set('Accept', 'application/json')
-			.except('Content-Type', /json/)
+			.expect('Content-Type', /json/)
 			.expect(200, { hello: "world"} ,done)
 	});
 })
